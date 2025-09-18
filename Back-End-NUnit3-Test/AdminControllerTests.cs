@@ -137,12 +137,5 @@ namespace PayrollApi.Tests.Controllers
             var result = await _controller.DeleteUser(555);
             Assert.IsInstanceOf<NotFoundObjectResult>(result);
         }
-
-        // 📝 Following this structure, you’ll add:
-        // - Positive tests for user creation (verify DB entry, audit, email, notification).
-        // - ResetUserPassword happy path.
-        // - SetActive happy paths (activate/deactivate).
-        // - DeleteUser happy paths with/without profile.
-        // - GetUsers with search term.
     }
 }
