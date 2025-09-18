@@ -114,6 +114,19 @@ namespace PayrollApi.Controllers
             if (slip == null)
                 return NotFound();
 
+            // Check if there's already a released payslip for this month
+            var existingReleased = await _db.Payslips.AnyAsync(p =>
+                p.EmployeeProfileId == slip.EmployeeProfileId
+                && p.Year == slip.Year
+                && p.Month == slip.Month
+                && p.IsReleased
+            );
+
+            if (existingReleased)
+                return BadRequest(
+                    "Cannot approve payslip - a released payslip already exists for this month"
+                );
+
             slip.Status = ApprovalStatus.Approved;
             slip.UpdatedAt = DateTime.UtcNow;
             await _db.SaveChangesAsync();
@@ -171,8 +184,46 @@ namespace PayrollApi.Controllers
             if (slip == null)
                 return NotFound();
 
+            // Check if there's already a released payslip for this month
+            var existingReleased = await _db.Payslips.AnyAsync(p =>
+                p.EmployeeProfileId == slip.EmployeeProfileId
+                && p.Year == slip.Year
+                && p.Month == slip.Month
+                && p.IsReleased
+                && p.Id != slip.Id
+            );
+
+            if (existingReleased)
+                return BadRequest("A payslip for this month has already been released");
+
             if (slip.Status != ApprovalStatus.Approved)
                 return BadRequest("Payslip must be approved before release");
+
+            // Mark all other approved payslips for this month as rejected
+            var otherApprovedPayslips = await _db
+                .Payslips.Where(p =>
+                    p.EmployeeProfileId == slip.EmployeeProfileId
+                    && p.Year == slip.Year
+                    && p.Month == slip.Month
+                    && p.Status == ApprovalStatus.Approved
+                    && p.Id != slip.Id
+                )
+                .ToListAsync();
+
+            foreach (var other in otherApprovedPayslips)
+            {
+                other.Status = ApprovalStatus.Rejected;
+                other.UpdatedAt = DateTime.UtcNow;
+
+                await _audit.LogAsync(
+                    "Payslip",
+                    other.Id,
+                    "AutoReject",
+                    $"Payslip {other.Id} rejected automatically because payslip {slip.Id} was released for {slip.Month}/{slip.Year}",
+                    CurrentUserId,
+                    CurrentUserEmail
+                );
+            }
 
             slip.IsReleased = true;
             slip.UpdatedAt = DateTime.UtcNow;

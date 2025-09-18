@@ -194,55 +194,55 @@ namespace PayrollApi.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4321),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(389),
                             Name = "Engineering"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4695),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(717),
                             Name = "Finance"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4696),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(718),
                             Name = "Marketing"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4696),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(719),
                             Name = "Sales"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4697),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(720),
                             Name = "IT Support"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4698),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(720),
                             Name = "Operations"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4698),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(721),
                             Name = "R&D"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4699),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(721),
                             Name = "Customer Service"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4699),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(722),
                             Name = "HR"
                         });
                 });
@@ -531,11 +531,11 @@ namespace PayrollApi.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 9, 17, 11, 41, 29, 779, DateTimeKind.Utc).AddTicks(862),
+                            CreatedAt = new DateTime(2025, 9, 18, 4, 54, 12, 35, DateTimeKind.Utc).AddTicks(5223),
                             Email = "nisanthsaru.oto@gmail.com",
                             FullName = "System Admin",
                             IsActive = true,
-                            PasswordHash = "$2a$11$uKVhSzt0K391glPZfdbHl.RZ1/mUErbSb.OFMKTVOuJhgaq8tmH9q",
+                            PasswordHash = "$2a$11$aGJWgHRLjZhk0pU9fqiTyOJxVsIMBjUHUk1pBaEPh8rPsu9PG0aC2",
                             Role = 1
                         });
                 });

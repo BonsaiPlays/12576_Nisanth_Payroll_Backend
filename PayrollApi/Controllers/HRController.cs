@@ -358,18 +358,6 @@ namespace PayrollApi.Controllers
             var effectiveFrom = req.EffectiveFrom;
             var effectiveTo = req.EffectiveFrom.AddYears(1);
 
-            // Prevent overlap with existing Approved
-            bool overlap = user.Profile.CTCStructures.Any(c =>
-                c.Status == ApprovalStatus.Approved
-                && c.EffectiveFrom < effectiveTo
-                && c.EffectiveTo > effectiveFrom
-            );
-
-            if (overlap)
-                return Conflict(
-                    new { error = "Employee already has an active CTC overlapping this period." }
-                );
-
             var gross = req.Basic + req.HRA + req.AllowanceItems.Sum(a => a.Amount);
 
             var ctc = new CTCStructure

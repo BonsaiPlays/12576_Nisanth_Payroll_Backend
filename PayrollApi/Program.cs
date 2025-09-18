@@ -28,7 +28,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DockerString"))
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     );
 });
 
@@ -78,8 +78,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate(); // apply schema
-    SeedTestData.Seed(db); // <- fills your 50 users and their CTC/payslips
+    db.Database.Migrate(); 
+    SeedTestData.Seed(db); 
 }
 
 if (app.Environment.IsDevelopment())

@@ -355,21 +355,21 @@ namespace PayrollApi.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Name", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4321), null, "Engineering", null, null },
-                    { 2, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4695), null, "Finance", null, null },
-                    { 3, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4696), null, "Marketing", null, null },
-                    { 4, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4696), null, "Sales", null, null },
-                    { 5, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4697), null, "IT Support", null, null },
-                    { 6, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4698), null, "Operations", null, null },
-                    { 7, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4698), null, "R&D", null, null },
-                    { 8, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4699), null, "Customer Service", null, null },
-                    { 9, new DateTime(2025, 9, 17, 11, 41, 29, 521, DateTimeKind.Utc).AddTicks(4699), null, "HR", null, null }
+                    { 1, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(389), null, "Engineering", null, null },
+                    { 2, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(717), null, "Finance", null, null },
+                    { 3, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(718), null, "Marketing", null, null },
+                    { 4, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(719), null, "Sales", null, null },
+                    { 5, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(720), null, "IT Support", null, null },
+                    { 6, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(720), null, "Operations", null, null },
+                    { 7, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(721), null, "R&D", null, null },
+                    { 8, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(721), null, "Customer Service", null, null },
+                    { 9, new DateTime(2025, 9, 18, 4, 54, 11, 827, DateTimeKind.Utc).AddTicks(722), null, "HR", null, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Email", "FullName", "IsActive", "PasswordHash", "Role", "UpdatedAt", "UpdatedBy" },
-                values: new object[] { 1, new DateTime(2025, 9, 17, 11, 41, 29, 779, DateTimeKind.Utc).AddTicks(862), null, "nisanthsaru.oto@gmail.com", "System Admin", true, "$2a$11$uKVhSzt0K391glPZfdbHl.RZ1/mUErbSb.OFMKTVOuJhgaq8tmH9q", 1, null, null });
+                values: new object[] { 1, new DateTime(2025, 9, 18, 4, 54, 12, 35, DateTimeKind.Utc).AddTicks(5223), null, "nisanthsaru.oto@gmail.com", "System Admin", true, "$2a$11$aGJWgHRLjZhk0pU9fqiTyOJxVsIMBjUHUk1pBaEPh8rPsu9PG0aC2", 1, null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CTCAllowances_CTCStructureId",
